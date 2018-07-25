@@ -20,20 +20,29 @@ public class CreateDemo {
         try {
 
             //Create the objects
-            Instructor tempInstructor=
-                    new Instructor("Savchuk","Roman","romanosen@gmail.com");
+//            Instructor tempInstructor=
+//                    new Instructor("Savchuk","Roman","romanosen@gmail.com");
+//
+//            InstructorDetail tempInstructorDetail=
+//                    new InstructorDetail("http://www.romanosen.com/youtube", "programming");
+            Instructor theInstructor=
+                    new Instructor("Savchuk","Tamara","tamarasavchuk@gmail.com");
 
-            InstructorDetail tempInstructorDetail=
-                    new InstructorDetail("http://www.romanosen.com/youtube", "programming");
+            InstructorDetail theInstructorDetail=
+                    new InstructorDetail("http://www.tamarasavchuk.com/youtube", "cooking");
             //associate the objects
-            tempInstructor.setInstructorDetail(tempInstructorDetail);
+           // tempInstructor.setInstructorDetail(tempInstructorDetail);
+            theInstructor.setInstructorDetail(theInstructorDetail);
             //start transaction
             session.beginTransaction();
 
             //save the instructor
             //also save details object because of cascade all
-            System.out.println("Saving Instructor "+ tempInstructor);
-            session.save(tempInstructor);
+            //System.out.println("Saving Instructor "+ tempInstructor);
+            System.out.println("Saving Instructor "+ theInstructor);
+
+           // session.save(tempInstructor);
+            session.save(theInstructor);
 
             //commit transaction
             session.getTransaction().commit();

@@ -29,7 +29,8 @@ public class InstructorDetail {
         this.hobby = hobby;
     }
 
-
+    public InstructorDetail() {
+    }
     //generate getters and setters
 
     public int getId() {
